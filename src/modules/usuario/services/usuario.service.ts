@@ -4,9 +4,10 @@ import { Usuario } from 'src/database/entities/usuario.entity';
 import { CreateUsuarioDto } from '../dto/createUsuario.dto';
 import { UpdateUsuarioDto } from '../dto/updateUsuario.dto';
 import { FindUsuarioDto } from '../dto/findUsuario.dto';
+import { AbstractUsuarioService } from '../abstract/usuario.abstract.service';
 
 @Injectable()
-export class UsuarioService {
+export class UsuarioService implements AbstractUsuarioService {
   constructor(private readonly usuarioRepository: AbstractUsuarioRepository) {}
 
   async create(usuarioDto: CreateUsuarioDto): Promise<Usuario> {

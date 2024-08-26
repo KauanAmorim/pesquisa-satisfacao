@@ -4,9 +4,10 @@ import { CreatePesquisaDto } from '../dto/createPesquisa.dto';
 import { Pesquisa } from '../../../database/entities/pesquisa.entity';
 import { UpdatePesquisaDto } from '../dto/updatePesquisa.dto';
 import { FindPesquisaDto } from '../dto/findPesquisa.dto';
+import { AbstractPesquisaService } from '../abstract/pesquisa.abstract.service';
 
 @Injectable()
-export class PesquisaService {
+export class PesquisaService implements AbstractPesquisaService {
   constructor(
     private readonly pesquisaRepository: AbstractPesquisaRepository,
   ) {}

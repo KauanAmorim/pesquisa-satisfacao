@@ -1,19 +1,12 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { AbstractPesquisaRepository } from "../abstract/pesquisa.abstract.repository";
 import { Pesquisa } from "../../../database/entities/pesquisa.entity";
 import { CreatePesquisaDto } from "../dto/createPesquisa.dto";
 import { FindPesquisaDto } from "../dto/findPesquisa.dto";
 import { UpdatePesquisaDto } from "../dto/updatePesquisa.dto";
-import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
 
 @Injectable()
 export class PesquisaMockRepository implements AbstractPesquisaRepository {
-  constructor(
-    @InjectRepository(Pesquisa)
-    private readonly pesquisaRepository: Repository<Pesquisa>
-  ) {}
-
   async create(createPesquisa: CreatePesquisaDto): Promise<Pesquisa> {
     const pesquisa = new Pesquisa();
     pesquisa.nome = createPesquisa.nome;
