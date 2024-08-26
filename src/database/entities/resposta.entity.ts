@@ -12,10 +12,7 @@ export class Resposta {
   id: number;
 
   @Column({ type: 'string' })
-  pergunta: string;
-
-  @Column({ type: 'boolean' })
-  ativo: boolean;
+  resposta: string;
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
