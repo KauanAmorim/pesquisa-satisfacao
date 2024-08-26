@@ -21,4 +21,4 @@ import { UsuarioService } from './services/usuario.service';
     }
   ],
 })
-export class AppModule {}
+export class UsuarioModule {}
