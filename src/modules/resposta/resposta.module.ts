@@ -21,4 +21,4 @@ import { Resposta } from '../../database/entities/resposta.entity';
     }
   ],
 })
-export class PerguntaModule {}
+export class RespostaModule {}
