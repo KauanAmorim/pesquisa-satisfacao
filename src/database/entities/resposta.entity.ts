@@ -6,8 +6,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity({ name: 'pergunta_satisfacao' })
-export class RespotaSatisfacao {
+@Entity({ name: 'resposta' })
+export class Resposta {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

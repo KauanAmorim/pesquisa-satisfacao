@@ -2,16 +2,15 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  CreateDateColumn,
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { PerguntaSatisfacao } from './pergunta-satisfacao.entity';
+import { Pergunta } from './pergunta.entity';
 import { Pesquisa } from './pesquisa.entity';
-import { RespotaSatisfacao } from './resposta-satisfacao.entity';
+import { Resposta } from './resposta.entity';
 
-@Entity({ name: 'pergunta_satisfacao' })
-export class PerguntaRespostaSatisfacao {
+@Entity({ name: 'pergunta_resposta' })
+export class PerguntaResposta {
   @PrimaryGeneratedColumn('increment')
   id: string;
 
@@ -25,14 +24,14 @@ export class PerguntaRespostaSatisfacao {
   @Column({ type: 'int' })
   idPergunta: number;
 
-  @ManyToOne(() => PerguntaSatisfacao)
+  @ManyToOne(() => Pergunta)
   @JoinColumn({ name: 'idPergunta' })
-  perguntaSatisfacao: PerguntaSatisfacao;
+  pergunta: Pergunta;
 
   @Column({ type: 'int' })
   idResposta: number;
 
-  @ManyToOne(() => RespotaSatisfacao)
+  @ManyToOne(() => Resposta)
   @JoinColumn({ name: 'idResposta' })
-  respostaSatisfacao: RespotaSatisfacao;
+  resposta: Resposta;
 }

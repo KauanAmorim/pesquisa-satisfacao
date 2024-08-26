@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsPositive, IsString } from "class-validator";
 
-export class FindPesquisaDto {
+export class CreatePerguntaDto {
   @ApiProperty()
   @IsNumber()
   @IsPositive()
@@ -13,7 +13,7 @@ export class FindPesquisaDto {
   @IsString()
   @IsNotEmpty()
   @IsOptional()
-  nome?: string;
+  pergunta?: string;
 
   @ApiProperty()
   @IsBoolean()
@@ -22,9 +22,8 @@ export class FindPesquisaDto {
   ativo?: boolean;
 
   @ApiProperty()
-  @IsNumber()
-  @IsPositive()
+  @IsBoolean()
   @IsNotEmpty()
   @IsOptional()
-  id_usuario?: number;
+  obrigatorio?: boolean;
 }
