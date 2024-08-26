@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  app:
+    container_name: cliente-satisfacao
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - type: bind
+        source: .
+        target: /home/node/app
+    command: npm run start:dev
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mysql
+    restart: always
+
+  mysql:
+    image: mysql:8.0.36
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '123'
+      MYSQL_DATABASE: 'cliente_satisfeito'
+      MYSQL_USER: 'kauan'
+      MYSQL_PASSWORD: '123'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+volumes:
+  db_data:
+
+networks:
+  default:
+    driver: bridge
