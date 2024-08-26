@@ -12,7 +12,7 @@ import { Resposta } from './resposta.entity';
 @Entity({ name: 'pergunta_resposta' })
 export class PerguntaResposta {
   @PrimaryGeneratedColumn('increment')
-  id: string;
+  id: number;
 
   @Column({ type: 'int' })
   idPesquisa: number;
