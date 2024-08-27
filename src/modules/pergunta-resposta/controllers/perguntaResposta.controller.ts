@@ -19,7 +19,7 @@ export class PerguntaRespostaController {
   }
 
   @Patch()
-  async updatePerguntaRespota(
+  async updatePerguntaResposta(
     perguntaRespostaDto: UpdatePerguntaRespostaDto,
   ): Promise<PerguntaResposta> {
     return this.perguntaRespostaService.update(perguntaRespostaDto);

@@ -8,19 +8,19 @@ import { FindPerguntaRespostaDto } from '../dto/findPerguntaResposta.dto';
 @Injectable()
 export class PerguntaRespostaMockRepository implements AbstractPerguntaRespostaRepository {
   async create(perguntaRespostaDto: CreatePerguntaRespostaDto): Promise<PerguntaResposta> {
-    const perguntaRespota = new PerguntaResposta();
-    perguntaRespota.idPesquisa = perguntaRespostaDto.idPesquisa;
-    perguntaRespota.idPergunta = perguntaRespostaDto.idPergunta;
-    perguntaRespota.idResposta = perguntaRespostaDto.idResposta;
-    return perguntaRespota;
+    const perguntaResposta = new PerguntaResposta();
+    perguntaResposta.idPesquisa = perguntaRespostaDto.idPesquisa;
+    perguntaResposta.idPergunta = perguntaRespostaDto.idPergunta;
+    perguntaResposta.idResposta = perguntaRespostaDto.idResposta;
+    return perguntaResposta;
   }
 
   async update(perguntaRespostaDto: UpdatePerguntaRespostaDto): Promise<PerguntaResposta> {
-    const perguntaRespota = new PerguntaResposta();
-    perguntaRespota.idPesquisa = perguntaRespostaDto.idPesquisa;
-    perguntaRespota.idPergunta = perguntaRespostaDto.idPergunta;
-    perguntaRespota.idResposta = perguntaRespostaDto.idResposta;
-    return perguntaRespota;
+    const perguntaResposta = new PerguntaResposta();
+    perguntaResposta.idPesquisa = perguntaRespostaDto.idPesquisa;
+    perguntaResposta.idPergunta = perguntaRespostaDto.idPergunta;
+    perguntaResposta.idResposta = perguntaRespostaDto.idResposta;
+    return perguntaResposta;
   }
 
   async findBy(perguntaRespostaDto: FindPerguntaRespostaDto): Promise<PerguntaResposta[]> {
