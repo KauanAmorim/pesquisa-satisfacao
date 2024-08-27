@@ -13,6 +13,7 @@ Além disso seria interessante ativar ou desativar a pesquisa.
 
 ### Usuario_Pesquisa
 No modulo de usuario_pesquisa será possivel criar, atualizar e listar a associação dos usuarios e quais pesquisas os usuários estão associados.
+OBS: Fica aqui o questionamento adiciono aqui a coluna para avaliação de estrelas da pesquisa ou em outro canto, no momento a unica solução pensada foi em adicionar nessa tabela mesmo.
 
 ### Pergunta
 No modulo de pergunta será possivel criar, atualizar e listar perguntas.
@@ -42,5 +43,6 @@ OBS: Num futuro pode ser interessante separar usuários que estão cadastrados n
 - [ ] Detalhar testes
 - [ ] Detalhar swagger
 - [ ] Separar a associação de pesquisas, perguntas e respotas de pergunta_resposta em duas tabelas (pesquisa_pergunta e pergunta_respota)
+- [ ] Pensar melhor onde colocar a avaliação da pesquisa
 
 ![Alt text](image.png)
