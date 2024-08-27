@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Patch, Post, Query } from '@nestjs/common';
 import { AbstractPerguntaRespostaService } from '../abstract/perguntaResposta.abstract.service';
 import { CreatePerguntaRespostaDto } from '../dto/createPerguntaResposta.dto';
 import { PerguntaResposta } from '../../../database/entities/perguntaResposta.entity';
@@ -13,21 +13,21 @@ export class PerguntaRespostaController {
 
   @Post()
   async createPerguntaResposta(
-    perguntaRespostaDto: CreatePerguntaRespostaDto,
+    @Body() perguntaRespostaDto: CreatePerguntaRespostaDto,
   ): Promise<PerguntaResposta> {
     return this.perguntaRespostaService.create(perguntaRespostaDto);
   }
 
   @Patch()
   async updatePerguntaResposta(
-    perguntaRespostaDto: UpdatePerguntaRespostaDto,
+    @Body() perguntaRespostaDto: UpdatePerguntaRespostaDto,
   ): Promise<PerguntaResposta> {
     return this.perguntaRespostaService.update(perguntaRespostaDto);
   }
 
   @Get()
   async getPerguntaResposta(
-    perguntaRespostaDto: FindPerguntaRespostaDto,
+    @Query() perguntaRespostaDto: FindPerguntaRespostaDto,
   ): Promise<PerguntaResposta[]> {
     return this.perguntaRespostaService.findBy(perguntaRespostaDto);
   }

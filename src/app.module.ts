@@ -5,6 +5,7 @@ import { PerguntaModule } from './modules/pergunta/pergunta.module';
 import { RespostaModule } from './modules/resposta/resposta.module';
 import { PerguntaRespostaModule } from './modules/pergunta-resposta/perguntaResposta.module';
 import { UsuarioPesquisaModule } from './modules/usuario-pesquisa/usuarioPesquisa.module';
+import { CriarPesquisaCompleta } from './modules/pesquisa-completa/services/criarPesquisaCompleta.service';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { UsuarioPesquisaModule } from './modules/usuario-pesquisa/usuarioPesquis
     PerguntaModule,
     RespostaModule,
     PerguntaRespostaModule,
+    CriarPesquisaCompleta,
   ],
   controllers: [],
   providers: [],

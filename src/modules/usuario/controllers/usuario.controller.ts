@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Patch, Post, Query } from '@nestjs/common';
 import { Usuario } from 'src/database/entities/usuario.entity';
 import { CreateUsuarioDto } from '../dto/createUsuario.dto';
 import { UpdateUsuarioDto } from '../dto/updateUsuario.dto';
@@ -12,17 +12,17 @@ export class UsuarioController {
   ) {}
 
   @Post()
-  async createUsuario(usuarioDto: CreateUsuarioDto): Promise<Usuario> {
+  async createUsuario(@Body() usuarioDto: CreateUsuarioDto): Promise<Usuario> {
     return this.usuarioService.create(usuarioDto);
   }
 
   @Patch()
-  async updateUsuario(usuarioDto: UpdateUsuarioDto): Promise<Usuario> {
+  async updateUsuario(@Body() usuarioDto: UpdateUsuarioDto): Promise<Usuario> {
     return this.usuarioService.update(usuarioDto);
   }
 
   @Get()
-  async getUsuario(usuarioDto: FindUsuarioDto): Promise<Usuario[]> {
+  async getUsuario(@Query() usuarioDto: FindUsuarioDto): Promise<Usuario[]> {
     return this.usuarioService.findBy(usuarioDto);
   }
 }

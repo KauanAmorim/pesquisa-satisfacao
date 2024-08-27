@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Patch, Post, Query } from '@nestjs/common';
 import { AbstractUsuarioPesquisaService } from '../abstract/usuarioPesquisa.abstract.service';
 import { CreateUsuarioPesquisaDto } from '../dto/createUsuarioPesquisa.dto';
 import { UpdateUsuarioPesquisaDto } from '../dto/updateUsuarioPesquisa.dto';
@@ -13,21 +13,21 @@ export class UsuarioPesquisaController {
 
   @Post()
   async createUsuarioPesquisa(
-    usuarioPesquisaDto: CreateUsuarioPesquisaDto,
+    @Body() usuarioPesquisaDto: CreateUsuarioPesquisaDto,
   ): Promise<UsuarioPesquisa> {
     return this.usuarioPesquisaService.create(usuarioPesquisaDto);
   }
 
   @Patch()
   async updateUsuarioPesquisa(
-    usuarioPesquisaDto: UpdateUsuarioPesquisaDto,
+    @Body() usuarioPesquisaDto: UpdateUsuarioPesquisaDto,
   ): Promise<UsuarioPesquisa> {
     return this.usuarioPesquisaService.update(usuarioPesquisaDto);
   }
 
   @Get()
   async getUsuarioPesquisa(
-    usuarioPesquisaDto: FindUsuarioPesquisaDto,
+    @Query() usuarioPesquisaDto: FindUsuarioPesquisaDto,
   ): Promise<UsuarioPesquisa[]> {
     return this.usuarioPesquisaService.findBy(usuarioPesquisaDto);
   }
