@@ -29,7 +29,7 @@ describe('UsuarioService', () => {
   });
 
   describe('create', () => {
-    it('should create a user and return it', async () => {
+    it('should create a Usuario and return it', async () => {
       const usuarioDto: CreateUsuarioDto = {
         cpf: '12345678910',
         nome: 'Test User',
@@ -47,7 +47,7 @@ describe('UsuarioService', () => {
   });
 
   describe('update', () => {
-    it('should update a user and return it', async () => {
+    it('should update a Usuario and return it', async () => {
       const usuarioDto: UpdateUsuarioDto = {
         id: 1,
         cpf: '12345678910',
@@ -66,7 +66,7 @@ describe('UsuarioService', () => {
   });
 
   describe('findBy', () => {
-    it('should return a list of users', async () => {
+    it('should return a list of Usuarios', async () => {
       const usuarioDto: FindUsuarioDto = {
         cpf: '12345678910',
       };

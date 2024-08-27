@@ -30,7 +30,7 @@ describe('PerguntaRespostaService', () => {
   });
 
   describe('create', () => {
-    it('should create a user and return it', async () => {
+    it('should create a PerguntaResposta and return it', async () => {
       const perguntaRespostaDto: CreatePerguntaRespostaDto = {
         idPesquisa: 1,
         idPergunta: 1,
@@ -47,7 +47,7 @@ describe('PerguntaRespostaService', () => {
   });
 
   describe('update', () => {
-    it('should update a user and return it', async () => {
+    it('should update a PerguntaResposta and return it', async () => {
       const perguntaRespostaDto: UpdatePerguntaRespostaDto = {
         id: 1,
         idPesquisa: 1,
@@ -65,7 +65,7 @@ describe('PerguntaRespostaService', () => {
   });
 
   describe('findBy', () => {
-    it('should return a list of users', async () => {
+    it('should return a list of PerguntaResposta', async () => {
       const perguntaRespostaDto: FindPerguntaRespostaDto = {};
 
       const result = await service.findBy(perguntaRespostaDto);

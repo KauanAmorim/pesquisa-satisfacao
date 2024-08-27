@@ -30,7 +30,7 @@ describe('PerguntaService', () => {
   });
 
   describe('create', () => {
-    it('should create a user and return it', async () => {
+    it('should create a Pergunta and return it', async () => {
       const perguntaDto: CreatePerguntaDto = {
         pergunta: 'Você gosta de ler quadrinho?',
         ativo: true,
@@ -47,7 +47,7 @@ describe('PerguntaService', () => {
   });
 
   describe('update', () => {
-    it('should update a user and return it', async () => {
+    it('should update a Pergunta and return it', async () => {
       const perguntaDto: UpdatePerguntaDto = {
         id: 1,
         pergunta: 'Você gota de ler mangá?',
@@ -65,7 +65,7 @@ describe('PerguntaService', () => {
   });
 
   describe('findBy', () => {
-    it('should return a list of users', async () => {
+    it('should return a list of Perguntas', async () => {
       const perguntaDto: FindPerguntaDto = {
         ativo: true
       };

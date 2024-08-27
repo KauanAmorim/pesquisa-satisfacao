@@ -29,7 +29,7 @@ describe('RespostaService', () => {
   });
 
   describe('create', () => {
-    it('should create a user and return it', async () => {
+    it('should create a Resposta and return it', async () => {
       const respostaDto: CreateRespostaDto = {
         resposta: 'Amo ler quadrinhos, estou lendo homem aranha atualmente'
       };
@@ -42,7 +42,7 @@ describe('RespostaService', () => {
   });
 
   describe('update', () => {
-    it('should update a user and return it', async () => {
+    it('should update a Resposta and return it', async () => {
       const respostaDto: UpdateRespostaDto = {
         id: 1,
         resposta: 'Não gosto de ler mangá, mas já li um pouco de dragon ball',
@@ -56,7 +56,7 @@ describe('RespostaService', () => {
   });
 
   describe('findBy', () => {
-    it('should return a list of users', async () => {
+    it('should return a list of Resposta', async () => {
       const respostaDto: FindRespostaDto = {};
 
       const result = await service.findBy(respostaDto);
