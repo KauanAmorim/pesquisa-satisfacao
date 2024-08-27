@@ -1,8 +1,10 @@
+import { Injectable } from "@nestjs/common";
 import { Resposta } from "../../../database/entities/resposta.entity";
 import { CreateRespostaDto } from "../dto/createResposta.dto";
 import { FindRespostaDto } from "../dto/findResposta.dto";
 import { UpdateRespostaDto } from "../dto/updateResposta.dto";
 
+@Injectable()
 export abstract class AbstractRespostaRepository
 {
   abstract create(perguntaDto: CreateRespostaDto): Promise<Resposta>;

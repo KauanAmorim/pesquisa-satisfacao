@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Usuario } from './entities/usuario.entity';
 
 @Module({
   imports: [
@@ -13,16 +12,16 @@ import { Usuario } from './entities/usuario.entity';
         host:
           configService.getOrThrow('DATABASE_DOCKER_HOST') ||
           configService.getOrThrow('DATABASE_HOST'),
-        port: configService.getOrThrow('DATABASE_PORT'),
+        port: configService.getOrThrow<number>('DATABASE_PORT'),
         username: configService.getOrThrow('DATABASE_USERNAME'),
         password: configService.getOrThrow('DATABASE_PASSWORD'),
         database: configService.getOrThrow('DATABASE_DATABASE'),
-        logging: configService.getOrThrow('DATABASE_LOG'),
+        logging: configService.getOrThrow<boolean>('DATABASE_LOG'),
         autoLoadEntities: true,
       }),
     }),
   ],
   providers: [],
-  exports: [Usuario],
+  exports: [TypeOrmModule], // Exportando o TypeOrmModule para uso em outros módulos
 })
 export class DatabaseModule {}

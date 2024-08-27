@@ -11,6 +11,8 @@ import { PesquisaService } from './services/pesquisa.service';
   imports: [TypeOrmModule.forFeature([Pesquisa])],
   controllers: [PesquisaController],
   providers: [
+    PesquisaRepository,
+    PesquisaService,
     {
       provide: AbstractPesquisaRepository,
       useClass: PesquisaRepository

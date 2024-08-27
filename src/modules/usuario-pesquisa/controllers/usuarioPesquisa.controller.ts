@@ -4,7 +4,9 @@ import { CreateUsuarioPesquisaDto } from '../dto/createUsuarioPesquisa.dto';
 import { UpdateUsuarioPesquisaDto } from '../dto/updateUsuarioPesquisa.dto';
 import { FindUsuarioPesquisaDto } from '../dto/findUsuarioPesquisa.dto';
 import { UsuarioPesquisa } from '../../../database/entities/usuarioPesquisa.entity';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Usuario-pesquisa')
 @Controller('usuario-pesquisa')
 export class UsuarioPesquisaController {
   constructor(
@@ -12,6 +14,7 @@ export class UsuarioPesquisaController {
   ) {}
 
   @Post()
+  @ApiResponse({ type: UsuarioPesquisa })
   async createUsuarioPesquisa(
     @Body() usuarioPesquisaDto: CreateUsuarioPesquisaDto,
   ): Promise<UsuarioPesquisa> {
@@ -19,6 +22,7 @@ export class UsuarioPesquisaController {
   }
 
   @Patch()
+  @ApiResponse({ type: UsuarioPesquisa })
   async updateUsuarioPesquisa(
     @Body() usuarioPesquisaDto: UpdateUsuarioPesquisaDto,
   ): Promise<UsuarioPesquisa> {
@@ -26,6 +30,7 @@ export class UsuarioPesquisaController {
   }
 
   @Get()
+  @ApiResponse({ type: [UsuarioPesquisa] })
   async getUsuarioPesquisa(
     @Query() usuarioPesquisaDto: FindUsuarioPesquisaDto,
   ): Promise<UsuarioPesquisa[]> {

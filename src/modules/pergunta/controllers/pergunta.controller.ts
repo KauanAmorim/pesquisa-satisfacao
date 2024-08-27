@@ -4,12 +4,15 @@ import { CreatePerguntaDto } from '../dto/createPergunta.dto';
 import { Pergunta } from '../../../database/entities/pergunta.entity';
 import { UpdatePerguntaDto } from '../dto/updatePergunta.dto';
 import { FindPerguntaDto } from '../dto/findPergunta.dto';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Pergunta')
 @Controller('pergunta')
 export class PerguntaController {
   constructor(private readonly perguntaService: AbstractPerguntaService) {}
 
   @Post()
+  @ApiResponse({ type: Pergunta })
   async createPergunta(
     @Body() perguntaDto: CreatePerguntaDto,
   ): Promise<Pergunta> {
@@ -17,6 +20,7 @@ export class PerguntaController {
   }
 
   @Patch()
+  @ApiResponse({ type: Pergunta })
   async updatePergunta(
     @Body() perguntaDto: UpdatePerguntaDto,
   ): Promise<Pergunta> {
@@ -24,6 +28,7 @@ export class PerguntaController {
   }
 
   @Get()
+  @ApiResponse({ type: [Pergunta] })
   async getPergunta(
     @Query() perguntaDto: FindPerguntaDto,
   ): Promise<Pergunta[]> {

@@ -4,7 +4,9 @@ import { CreatePerguntaRespostaDto } from '../dto/createPerguntaResposta.dto';
 import { PerguntaResposta } from '../../../database/entities/perguntaResposta.entity';
 import { UpdatePerguntaRespostaDto } from '../dto/updatePerguntaResposta.dto';
 import { FindPerguntaRespostaDto } from '../dto/findPerguntaResposta.dto';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Pergunta-resposta')
 @Controller('pergunta-resposta')
 export class PerguntaRespostaController {
   constructor(
@@ -12,6 +14,7 @@ export class PerguntaRespostaController {
   ) {}
 
   @Post()
+  @ApiResponse({ type: PerguntaResposta })
   async createPerguntaResposta(
     @Body() perguntaRespostaDto: CreatePerguntaRespostaDto,
   ): Promise<PerguntaResposta> {
@@ -19,6 +22,7 @@ export class PerguntaRespostaController {
   }
 
   @Patch()
+  @ApiResponse({ type: PerguntaResposta })
   async updatePerguntaResposta(
     @Body() perguntaRespostaDto: UpdatePerguntaRespostaDto,
   ): Promise<PerguntaResposta> {
@@ -26,6 +30,7 @@ export class PerguntaRespostaController {
   }
 
   @Get()
+  @ApiResponse({ type: [PerguntaResposta] })
   async getPerguntaResposta(
     @Query() perguntaRespostaDto: FindPerguntaRespostaDto,
   ): Promise<PerguntaResposta[]> {

@@ -6,6 +6,7 @@ import { AbstractPerguntaRepository } from './abstract/pergunta.abstract.reposit
 import { PerguntaRepository } from './repositories/pergunta.repository';
 import { AbstractPerguntaService } from './abstract/pergunta.abstract.service';
 import { PesquisaService } from '../pesquisa/services/pesquisa.service';
+import { PerguntaService } from './services/pergunta.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Pergunta])],
@@ -13,12 +14,13 @@ import { PesquisaService } from '../pesquisa/services/pesquisa.service';
   providers: [
     {
       provide: AbstractPerguntaRepository,
-      useClass: PerguntaRepository
+      useClass: PerguntaRepository,
     },
     {
       provide: AbstractPerguntaService,
-      useClass: PesquisaService
-    }
+      useClass: PerguntaService,
+    },
   ],
+  exports: [],
 })
 export class PerguntaModule {}

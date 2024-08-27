@@ -8,7 +8,7 @@ import { Pesquisa } from '../../../database/entities/pesquisa.entity';
 import { CreatePerguntaDto } from 'src/modules/pergunta/dto/createPergunta.dto';
 
 @Injectable()
-export class CriarPesquisaCompleta {
+export class CriarPesquisaCompletaService {
   constructor(
     private readonly pesquisaService: AbstractPesquisaService,
     private readonly perguntaService: AbstractPerguntaService,
